@@ -2,6 +2,8 @@
 
 Displays error messages as [Twitter Bootstrap Popovers] (http://twitter.github.com/bootstrap/javascript.html#popovers) instead of inline text.
 
+Check out the blog post [here](http://www.mdobie.co.uk/2012/11/03/twitter-bootstrap-popovers-jquery-validation/).
+
 ##Usage
 
 Include the `jquery.validate.bootstrap.js` along with the jquery validation scripts
