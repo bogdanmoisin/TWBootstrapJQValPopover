@@ -43,7 +43,6 @@ $.validator.setDefaults({
 });
 
 $(function () {
-    // if the page was rendered with an error, add the error class to the control group
     $('form').each(function () {
         $(this).find('div.control-group').each(function () {
             if ($(this).find('.field-validation-error').length > 0) {
