@@ -11,8 +11,6 @@ $.validator.setDefaults({
         }
         $element.addClass(errorClass).removeClass(validClass);
         $element.parents("div.control-group").addClass("error");
-
-        // $('label.error').hide();
     },
     unhighlight: function (element, errorClass, validClass) {
         var $element;
@@ -30,7 +28,6 @@ $.validator.setDefaults({
             $(value).popover('hide');
         });
 
-        // $('label.error').hide();
         $.each(errorList, function (index, value) {
             var pop = $(value.element).popover({
                 trigger: 'manual',
