@@ -21,7 +21,7 @@
                                     <label for="textbox">Enter Some Text</label>
                                     <div class="controls">
                                         <input type="text" name="textbox" id="textbox" class="span4" title="Error Title"
-                                            data-val="true" data-val-required="Required"
+                                            data-rule-required="true"
                                             data-placement="bottom" />
                                         <ul class="help-block">
                                             <li>This field is reqired.</li>
@@ -34,8 +34,8 @@
                                     <label for="numbers">Enter Some Numbers (1-10)</label>
                                     <div class="controls">
                                         <input type="text" name="numbers" id="numbers" class="span4"
-                                            data-val="true" data-val-range="Only enter numbers between 1 and 10" data-val-range-max="10" data-val-range-min="1" 
-                                            data-val-required="Required" 
+                                            data-rule-range="[1, 10]" 
+                                            data-rule-required="true" 
                                             data-title="Number Error"/>
                                         <ul class="help-block">
                                             <li>This field is reqired.</li>
@@ -59,11 +59,18 @@
             </div>
         </div>
 
+
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="resources/js/bootstrap.min.js"></script>
 
-        <script src="resources/js/jquery.validate.min.js"></script>
-        <script src="resources/js/jquery.validate.unobtrusive.min.js"></script>
+        <script src="resources/js/jquery.validate.js"></script>
         <script src="resources/js/jquery.validate.bootstrap.js"></script>
+       
+        <script>
+            $(document).ready(function() {
+                $('form').validate();
+            });
+       </script>
+
     </body>
 </html>

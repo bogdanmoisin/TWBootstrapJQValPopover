@@ -1,4 +1,7 @@
 $.validator.setDefaults({
+    errorPlacement: function(error,element) {
+       return true;
+    },
     highlight: function (element, errorClass, validClass) {
         var $element;
         if (element.type === 'radio') {
@@ -8,6 +11,8 @@ $.validator.setDefaults({
         }
         $element.addClass(errorClass).removeClass(validClass);
         $element.parents("div.control-group").addClass("error");
+
+        // $('label.error').hide();
     },
     unhighlight: function (element, errorClass, validClass) {
         var $element;
@@ -25,11 +30,12 @@ $.validator.setDefaults({
             $(value).popover('hide');
         });
 
+        // $('label.error').hide();
         $.each(errorList, function (index, value) {
             var pop = $(value.element).popover({
                 trigger: 'manual',
                 content: value.message,
-                title: 'Error'
+                template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
             });
 
             pop.data('popover').options.content = value.message;
@@ -40,14 +46,4 @@ $.validator.setDefaults({
 
         this.defaultShowErrors();
     }
-});
-
-$(function () {
-    $('form').each(function () {
-        $(this).find('div.control-group').each(function () {
-            if ($(this).find('.field-validation-error').length > 0) {
-                $(this).addClass('error');
-            }
-        });
-    });
 });
