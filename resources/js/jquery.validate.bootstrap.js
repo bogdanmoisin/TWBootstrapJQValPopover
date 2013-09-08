@@ -10,7 +10,7 @@ $.validator.setDefaults({
             $element = $(element);
         }
         $element.addClass(errorClass).removeClass(validClass);
-        $element.parents("div.control-group").addClass("error");
+        $element.parents("div.form-group").addClass("has-error");
     },
     unhighlight: function (element, errorClass, validClass) {
         var $element;
@@ -20,7 +20,7 @@ $.validator.setDefaults({
             $element = $(element);
         }
         $element.removeClass(errorClass).addClass(validClass);
-        $element.parents("div.control-group").removeClass("error");
+        $element.parents("div.form-group").removeClass("has-error");
     },
     showErrors: function (errorMap, errorList) {
 
@@ -35,7 +35,7 @@ $.validator.setDefaults({
                 template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
             });
 
-            pop.data('popover').options.content = value.message;
+            //pop.data('popover').options.content = value.message;
 
             $(value.element).popover('show');
 
